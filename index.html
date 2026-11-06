@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sujeeth Raghavendra.A | Personal Portfolio</title>
+
+<style>
+/* ---------- BASIC SETTINGS ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #080d19;
+    --surface: #111a2c;
+    --surface2: #172238;
+    --text: #f4f6ff;
+    --muted: #a4aec3;
+    --blue: #66a6ff;
+    --purple: #a78bfa;
+    --border: rgba(255,255,255,0.09);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+header {
+    width: 100%;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,13,25,0.88);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+nav a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--blue);
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: white;
+    font-size: 23px;
+    padding: 3px 10px;
+    border-radius: 7px;
+}
+
+/* ---------- COMMON DESIGN ---------- */
+
+section {
+    padding: 100px 9%;
+    scroll-margin-top: 65px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-heading small {
+    color: var(--blue);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 35px;
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #66a6ff, #b69aff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.card {
+    background: linear-gradient(145deg, var(--surface), #0e1728);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 25px;
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(102,166,255,0.6);
+    box-shadow: 0 15px 35px rgba(58,111,210,0.12);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+/* ---------- HOME SECTION ---------- */
+
+#home {
+    min-height: 100vh;
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 25%, #443b8b45, transparent 30%),
+        radial-gradient(circle at 10% 80%, #216caa30, transparent 35%),
+        var(--bg);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+}
+
+.availability {
+    display: inline-block;
+    border: 1px solid #4dba8a;
+    color: #72e4ae;
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.12;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 570px;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 23px;
+    border-radius: 8px;
+    border: 1px solid var(--blue);
+    display: inline-block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4389e8, #8065d9);
+    color: white;
+    border: none;
+}
+
+.btn-outline {
+    color: var(--blue);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px #4389e830;
+}
+
+.profile-area {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-frame {
+    width: 290px;
+    height: 350px;
+    border-radius: 25px;
+    padding: 9px;
+    background: linear-gradient(145deg, #66a6ff, #a78bfa);
+    transform: rotate(3deg);
+    box-shadow: 0 20px 60px #4d6cbd30;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 19px;
+    background: #202b40;
+}
+
+.profile-note {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 12px 17px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+/* ---------- ABOUT SECTION ---------- */
+
+#about {
+    background: #0c1423;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-content p {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.about-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.info-box {
+    padding: 17px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.info-box small {
+    color: var(--blue);
+    display: block;
+}
+
+.info-box strong {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- EDUCATION ---------- */
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+    border-left: 2px solid #547cbd;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: var(--blue);
+    border-radius: 50%;
+    position: absolute;
+    left: -38px;
+    top: 26px;
+    box-shadow: 0 0 15px var(--blue);
+}
+
+.timeline-item h3 {
+    color: var(--blue);
+    margin-bottom: 6px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.year {
+    display: inline-block;
+    color: var(--purple);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* ---------- SKILLS ---------- */
+
+#skills {
+    background: #0c1423;
+}
+
+.skill-card {
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.level {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #80d9b0;
+    background: #173b31;
+    padding: 5px 11px;
+    border-radius: 20px;
+}
+
+/* ---------- HOBBIES ---------- */
+
+.hobby-card {
+    text-align: center;
+}
+
+.hobby-card .emoji {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.hobby-card h3 {
+    color: var(--purple);
+    margin-bottom: 7px;
+}
+
+/* ---------- GOALS ---------- */
+
+.goal-box {
+    border-left: 3px solid var(--blue);
+}
+
+.goal-box h3 {
+    color: var(--blue);
+    margin-bottom: 12px;
+}
+
+.goal-box p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ---------- ACHIEVEMENTS ---------- */
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.achievement-icon {
+    font-size: 32px;
+}
+
+.achievement p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ---------- CONTACT ---------- */
+
+#contact {
+    background:
+        radial-gradient(circle at 50% 100%, #493a8240, transparent 45%),
+        #0c1423;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin: 12px 0 25px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background: #050914;
+    padding: 25px 8%;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--blue);
+}
+
+/* ---------- ANIMATION ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width: 900px) {
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 0.8fr;
+    }
+}
+
+@media(max-width: 700px) {
+    header {
+        padding: 15px 6%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: #101a2c;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    section {
+        padding: 75px 7%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-area {
+        margin-top: 30px;
+    }
+
+    .profile-frame {
+        width: 230px;
+        height: 280px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+}
+
+@media(max-width: 400px) {
+    .about-info {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="logo">V<span>.</span> GOWDA</div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Interests</a>
+        <a href="#goals">Goals</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<!-- HOME SECTION -->
+
+<section id="home">
+    <div class="hero">
+
+        <div class="hero-text">
+            <span class="availability">
+                ✦ FIRST YEAR BCA STUDENT
+            </span>
+
+            <h1>
+                Hello, I'm
+                <span class="gradient-text">Sujeeth Raghavendra.A</span>
+            </h1>
+
+            <p>
+                An aspiring technology enthusiast exploring the
+                world of Computer Applications, Artificial
+                Intelligence and Machine Learning.
+
+                Welcome to my personal space on the internet,
+                where I share my journey, interests and ambitions.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    Discover More →
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-area">
+            <div class="profile-frame">
+                <!-- Replace profile.jpg with your photograph -->
+                <img src="profile.jpg" alt="">
+            </div>
+
+            <div class="profile-note">
+                ✨ Learning today. Building tomorrow.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ABOUT ME -->
+
+<section id="about">
+    <div class="section-heading reveal">
+        <small>GET TO KNOW ME</small>
+        <h2>About <span class="gradient-text">Me</span></h2>
+        <p>A little introduction about who I am.</p>
+    </div>
+
+    <div class="about-content reveal">
+
+        <div>
+            <h3>Every journey starts somewhere.</h3>
+
+            <br>
+
+            <p>
+                I'm Sujeeth Raghavendra.A, a first-year BCA student
+                interested in technology and its ability to
+                solve real-world problems.
+            </p>
+
+            <p>
+                I would describe myself as a calm, thoughtful
+                and introverted person. I enjoy learning new
+                things, exploring ideas and improving myself
+                step by step.
+            </p>
+
+            <p>
+                My current focus is to strengthen my
+                programming fundamentals and gradually
+                explore Artificial Intelligence and Machine Learning.
+            </p>
+        </div>
+
+        <div class="about-info">
+
+            <div class="info-box">
+                <small>FULL NAME</small>
+                <strong>Sujeeth Raghavendra A</strong>
+            </div>
+
+            <div class="info-box">
+                <small>LOCATION</small>
+                <strong>Bangalore</strong>
+            </div>
+
+            <div class="info-box">
+                <small>COLLEGE</small>
+                <strong>REVA University</strong>
+            </div>
+
+            <div class="info-box">
+                <small>COURSE</small>
+                <strong>BCA with AI & ML</strong>
+            </div>
+
+            <div class="info-box">
+                <small>DEPARTMENT</small>
+                <strong>School of CSA</strong>
+            </div>
+
+            <div class="info-box">
+                <small>CLASS</small>
+                <strong>F Section</strong>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-heading reveal">
+        <small>MY LEARNING PATH</small>
+        <h2>Education <span class="gradient-text">Journey</span></h2>
+        <p>Every step adds something new to my journey.</p>
+    </div>
+
+    <div class="timeline reveal">
+
+        <div class="timeline-item card">
+            <span class="year">10TH STANDARD</span>
+            <h3>Secondary Education</h3>
+            <p><b>School:</b> ACTS Secondary School</p>
+            <p><b>Year:</b> 2024</p>
+            <p><b>Percentage:</b> 84</p>
+        </div>
+
+        <div class="timeline-item card">
+            <span class="year">12TH / PUC</span>
+            <h3>Pre-University Education</h3>
+            <p><b>College:</b> ALVAS PUC College</p>
+            <p><b>Stream:</b> CEBA</p>
+            <p><b>Year:</b> 2026</p>
+            <p><b>Percentage:</b> 96</p>
+        </div>
+
+        <div class="timeline-item card">
+            <span class="year">CURRENTLY PURSUING</span>
+            <h3>Bachelor of Computer Applications</h3>
+            <p><b>College:</b> REVA University</p>
+            <p><b>Course:</b> BCA with AI & ML</p>
+            <p><b>Department:</b> School of CSA</p>
+            <p><b>Year:</b> First Year</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-heading reveal">
+        <small>WHAT I CAN DO</small>
+        <h2>My <span class="gradient-text">Skills</span></h2>
+        <p>Skills I'm developing as I grow in technology.</p>
+    </div>
+
+    <div class="grid reveal">
+
+        <div class="card skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Computer Basics</h3>
+            <p>Basic computer operations, internet usage and document handling.</p>
+            <span class="level">Basic Knowledge</span>
+        </div>
+
+        <div class="card skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML</h3>
+            <p>Learning webpage structure and the fundamentals of web development.</p>
+            <span class="level">Learning</span>
+        </div>
+
+        <div class="card skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>Exploring webpage styling, layouts, colours and responsive design.</p>
+            <span class="level">Learning</span>
+        </div>
+
+        <div class="card skill-card">
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>Beginning to explore interactive webpage development.</p>
+            <span class="level">Learning</span>
+        </div>
+
+        <div class="card skill-card">
+            <div class="skill-icon">🐍</div>
+            <h3>Python</h3>
+            <p>A programming language I aim to learn for future AI and ML projects.</p>
+            <span class="level">Future Learning Goal</span>
+        </div>
+
+        <div class="card skill-card">
+            <div class="skill-icon">🧩</div>
+            <h3>Problem Solving</h3>
+            <p>Developing logical thinking and approaching problems step by step.</p>
+            <span class="level">Developing</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- HOBBIES -->
+
+<section id="hobbies">
+
+    <div class="section-heading reveal">
+        <small>BEYOND THE SCREEN</small>
+        <h2>Hobbies & <span class="gradient-text">Interests</span></h2>
+        <p>The things that make my time meaningful.</p>
+    </div>
+
+    <div class="grid reveal">
+
+        <div class="card hobby-card">
+            <div class="emoji">🎵</div>
+            <h3>Music</h3>
+            <p>Exploring different sounds, melodies and musical styles.</p>
+        </div>
+
+        <div class="card hobby-card">
+            <div class="emoji">📚</div>
+            <h3>Reading</h3>
+            <p>Discovering new ideas and stories through books.</p>
+        </div>
+
+        <div class="card hobby-card">
+            <div class="emoji">📸</div>
+            <h3>Photography</h3>
+            <p>Capturing interesting moments and beautiful surroundings.</p>
+        </div>
+
+        <div class="card hobby-card">
+            <div class="emoji">✈️</div>
+            <h3>Travelling</h3>
+            <p>Exploring new places and learning from different experiences.</p>
+        </div>
+
+        <div class="card hobby-card">
+            <div class="emoji">🏃</div>
+            <h3>Fitness</h3>
+            <p>Staying active and developing healthy daily habits.</p>
+        </div>
+
+        <div class="card hobby-card">
+            <div class="emoji">💡</div>
+            <h3>Technology</h3>
+            <p>Exploring new technology and discovering how things work.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- GOALS -->
+
+<section id="goals">
+
+    <div class="section-heading reveal">
+        <small>WHERE I'M HEADED</small>
+        <h2>My <span class="gradient-text">Goals</span></h2>
+        <p>Small milestones. Bigger ambitions.</p>
+    </div>
+
+    <div class="grid reveal">
+
+        <div class="card goal-box">
+            <h3>01. Short-Term Goals</h3>
+            <p>
+                • Improve programming fundamentals.<br>
+                • Learn HTML, CSS and JavaScript.<br>
+                • Start learning Python.<br>
+                • Build practical mini projects.<br>
+                • Improve communication and problem-solving skills.
+            </p>
+        </div>
+
+        <div class="card goal-box">
+            <h3>02. Long-Term Goals</h3>
+            <p>
+                • Build a career in AI and Machine Learning.<br>
+                • Gain real-world project experience.<br>
+                • Develop useful technology solutions.<br>
+                • Keep learning and adapting to new technologies.<br>
+                • Become a skilled and responsible professional.
+            </p>
+        </div>
+
+        <div class="card goal-box">
+            <h3>03. My Vision</h3>
+            <p>
+                My vision is to become a capable technology
+                professional who can use creativity, knowledge
+                and problem-solving to build meaningful
+                solutions for real-world challenges.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+
+    <div class="section-heading reveal">
+        <small>MILESTONES</small>
+        <h2>My <span class="gradient-text">Achievements</span></h2>
+        <p>Every achievement begins with an effort.</p>
+    </div>
+
+    <div class="grid reveal">
+
+        <div class="card achievement">
+            <div class="achievement-icon">🏆</div>
+            <div>
+                <h3>Academic Achievements</h3>
+                <p>Add your genuine academic awards or results here.</p>
+            </div>
+        </div>
+
+        <div class="card achievement">
+            <div class="achievement-icon">📜</div>
+            <div>
+                <h3>Certifications</h3>
+                <p>Add the courses and certificates you have completed.</p>
+            </div>
+        </div>
+
+        <div class="card achievement">
+            <div class="achievement-icon">🎯</div>
+            <div>
+                <h3>Activities & Competitions</h3>
+                <p>Add your genuine competition or extracurricular achievements.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-heading reveal">
+        <small>LET'S CONNECT</small>
+        <h2>Contact <span class="gradient-text">Me</span></h2>
+        <p>Have an opportunity or just want to connect? Feel free to reach out.</p>
+    </div>
+
+    <div class="card contact-box reveal">
+
+        <div style="font-size:45px;">✉️</div>
+
+        <h3>Let's create something meaningful.</h3>
+
+        <p>
+            I'm always interested in learning, exploring
+            opportunities and connecting with people
+            who share an interest in technology.
+        </p>
+        <div class="contact-links">
+
+            <!-- Replace with your real email -->
+            <a class="btn btn-primary"
+               href="mailto:yourmail@example.com">
+                ✉ Email Me
+            </a>
+
+            <!-- Add your profile URLs -->
+            <a class="btn btn-outline"
+               href="https://www.linkedin.com/"
+               target="_blank" rel="noopener">
+                LinkedIn
+            </a>
+
+            <a class="btn btn-outline"
+               href="https://github.com/"
+               target="_blank" rel="noopener">
+                GitHub
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+    <h3>V<span style="color:#66a6ff;">.</span> GOWDA</h3>
+
+    <p>
+        Designed and developed with curiosity and creativity.
+    </p>
+
+    <br>
+
+    <p>© 2026 Vishwas Gowda | Personal Profile Website</p>
+    <p><span>Keep learning. Keep growing.</span></p>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// MOBILE NAVIGATION
+
+function toggleMenu() {
+    document.getElementById("navigation").classList.toggle("open");
+}
+
+// CLOSE MENU AFTER CLICKING A LINK
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function() {
+        document.getElementById("navigation").classList.remove("open");
+    });
+});
+
+// SCROLL REVEAL ANIMATION
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+// ACTIVE NAVIGATION LINK
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("nav a");
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        let sectionTop = section.offsetTop - 150;
+
+        if(window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
